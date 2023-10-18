@@ -36,3 +36,49 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+body {
+  font-family: sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__logo img {
+    height: 2rem;
+}
+
+.navbar__profile img {
+    height: 2rem;
+    cursor: pointer;
+}
+
+.navbar__dropdown {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.navbar__dropdown a {
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.navbar__dropdown a:hover {
+    color: #0077ff;
+}
