@@ -8,8 +8,6 @@ body, h1, h2, h3, p {
   
   /* Header styles */
   .header {
-    background-color: #352f2f;
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,9 +99,9 @@ body, h1, h2, h3, p {
   .container {
     background-color: #fff;
     padding: 0px;
-    border-radius: 0px;
+    border-radius: 27px;
+    margin-top: 50px;
     box-shadow: none;
-    margin-top: 0;
   }
   
   /* Service card styles */

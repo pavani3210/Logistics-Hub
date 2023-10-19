@@ -17,7 +17,6 @@
 }
 
 .text{
-    color: white;
     font-size: 48px;
     font-weight: 700;
 }
@@ -61,6 +60,8 @@
 
 .forgot-password{
     padding-left: 62px;
+    display: flex;
+    gap: 6px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
