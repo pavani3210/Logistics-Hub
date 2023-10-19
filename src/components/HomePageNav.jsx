@@ -19,15 +19,13 @@ const useStyles = makeStyles({
         },
     },
     divhead:{
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-        backgroundColor: '#fff',
-        padding: '10px 20px',
-        borderBottom:"solid 1px #ccc"
+        backgroundColor: '#efefef',
     },
     button:{
         border:"none",
         background:"none",
         fontSize:"medium",
+        cursor: "pointer",
     },
 });
 
@@ -46,11 +44,11 @@ const HomePageNav = () => {
 
     return (
         <div className={classes.divhead}>
-            <nav className={classes.navbar}>
+            <nav className={classes.navbar} style={{    display: "flex", justifyContent: "space-between", alignItems: "center", margin: "0px 20px"}}>
                 <div className={classes.logo}>
-                    <img src="logonew.avif" alt="Shipwise solutions" className="logo-image" />
+                    <img src="logonew.png" alt="Shipwise solutions" className="logo-image" />
                 </div>
-                <nav className="navigation" style={{marginLeft:"350px"}}>
+                <nav className="navigation">
                     <ul>
                         <li><button className={classes.button} href="homepage">
                         <Link to="/homepage" style={{color:"black", fontSize:"medium"}}>Home</Link></button></li>
@@ -58,10 +56,10 @@ const HomePageNav = () => {
                         <li><button className={classes.button} onClick={() => scrollToSection('service-providers')}>Service Providers</button></li>
                         <li><button className={classes.button} onClick={() => scrollToSection('logistics-hub-content')}>Coverage</button></li>
                         {/* <li><a href="/">Pricing</a></li> */}
-                        <li><button className={classes.button} onClick={() => scrollToSection('about-us')}>About US</button></li>
+                        <li><button className={classes.button} onClick={() => scrollToSection('about-us')}>About us</button></li>
                     </ul>
                 </nav>
-                <div style={{marginLeft:"300px",}}>
+                <div>
                     <Button className={classes.button}  style={{color:"black"}}href="/login">Login</Button>
                     <Button className={classes.button}  style={{color:"black"}}href="/Signup">Signup</Button>
                 </div>

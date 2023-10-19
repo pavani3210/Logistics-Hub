@@ -8,7 +8,7 @@ const Header = () => {
     <div className="App">
       <header className="header">
         <div className="logo">
-          <img src="logonew.avif" alt="Shipwise solutions" className="logo-image" />
+          <img src="logonew.png" alt="Shipwise solutions" className="logo-image" />
         </div>
         <nav className="navigation">
           <ul>

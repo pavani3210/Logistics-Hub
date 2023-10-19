@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FaceRoundedIcon from '@mui/icons-material/FaceRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import { makeStyles } from '@mui/styles';
@@ -14,6 +14,7 @@ const useStyles = makeStyles({
 
     logo: {
         color: '#000',
+        cursor:"pointer",
         textDecoration: 'none',
         '&:hover': {
             textDecoration: 'none',
@@ -28,12 +29,8 @@ const useStyles = makeStyles({
         },
     },
     divhead:{
-        // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-        // backgroundColor: '#fff',
         padding:"10px",
-        background:"#bbe9bb"
-        // padding: '10px 20px',
-        // borderBottom:"solid 1px #ccc"
+        background:"#efefef"
     },
     dropdown: {
         position: 'absolute',
@@ -59,6 +56,7 @@ const useStyles = makeStyles({
 const Navbar = (props) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const classes = useStyles();
+    const navigate = useNavigate();
 
     const handleDropdown = () => {
         setShowDropdown(!showDropdown);
@@ -75,8 +73,8 @@ const Navbar = (props) => {
         <div className={classes.divhead}>
             <nav className={classes.navbar}>
                 <div style={{ display: 'flex', gap: '25px', justifyContent:"center", alignItems:"center"}}>
-                    <div className={classes.logo}>
-                        <img src="logonew.avif" alt="Shipwise solutions" className="logo-image" />
+                    <div className={classes.logo} onClick={()=>navigate("/orders")}>
+                        <img src="logonew.png" alt="Shipwise solutions" className="logo-image" />
                     </div>
                     <Link className={selectedTab === "orders" ? 'nav-button-select' : 'nav-button-deselect'}
                         onClick={()=>setSelectedTab("orders")}
@@ -95,7 +93,7 @@ const Navbar = (props) => {
                 </div>
                 <div style={{ display: 'flex', gap: '25px', paddingRight:"25px" }}>
                     <div className={classes.profile}>
-                        <SettingsRoundedIcon />
+                        <SettingsRoundedIcon onClick={() => navigate('/labels')} />
                     </div>
                     <div className={classes.profile}>
                         <FaceRoundedIcon onClick={handleDropdown} />
@@ -114,5 +112,6 @@ const Navbar = (props) => {
         </div>
     );
 };
+
 
 export default Navbar;

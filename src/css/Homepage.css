@@ -131,6 +131,7 @@ body, h1, h2, h3, p {
   .search-input {
     padding: 10px;
     flex: 1;
+    border: solid;
   }
   
   .search-button {

@@ -35,9 +35,10 @@ const useStyles = makeStyles({
   text:{
     width:"758px",
     border:"solid",
+    marginTop:"33px",
     borderRadius:"15px",
     textAlign:"center",
-    padding:"0px 50px"
+    padding:"13px"
   },
   textLabel:{
     display:"flex",
@@ -57,7 +58,7 @@ const Homepage = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,         // Enable automatic sliding
-    autoplaySpeed: 2000,  
+    autoplaySpeed: 5000,  
   };
 
   const updateDelivery = (service) => {
@@ -66,10 +67,16 @@ const Homepage = () => {
   
   return (
     <div className="App">
-      
       <HomePageNav/>
-      <main>
-        <div className="slider-container">
+      <main style={{display:"flex", flexDirection:"column", justifyContent:"center",
+        alignItems:"center", background:"#fff", borderRadius:"25px 25px 0 0",margin: "0 15px",
+        boxShadow: "rgba(76, 103, 116, 0.32) 0px 8px 16px",
+        border: "solid 0.5px #dbdbdb",
+        }}>
+          <div style={{padding:"20px"}}>
+            <h2>Welcome to the Logistics and Shipping Hub!</h2>
+          </div>
+        <div className="slider-container" style={{width:"700px"}}>
           <Slider {...settings}>
             <div>
               <img className={classes.img} src="banner01.jpg" alt="Image 1" />
@@ -83,14 +90,14 @@ const Homepage = () => {
             {/* Add more image divs as needed */}
           </Slider>
         </div>
-
-        <div>
-            <h2>Welcome to the Logistics and Shipping Hub!</h2>
-            <p style={{textAlign:"end",padding:"10px 50px 20px 50px",}}>Are you in need of reliable shipping and delivery services? Look no further! Our platform is your gateway to a world of logistics solutions, connecting you with the most trusted service providers and providing vital information on coverage areas and more. Whether you're a business seeking efficient supply chain management or an individual looking to send a package, we've got you covered.</p>
+        <div style={{textAlign:"center"}}>
+          <p style={{textAlign:"center",paddingTop:"35px",fontWeight:600, margin:0}}>Are you in need of reliable shipping and delivery services? </p>
+          <div className={classes.text} style={{margin:"0", border:"none"}}>
+            <p>Look no further! Our platform is your gateway to a world of logistics solutions, connecting you with the most trusted service providers and providing vital information on coverage areas and more. Whether you're a business seeking efficient supply chain management or an individual looking to send a package, we've got you covered.</p>
           </div>
-
-        <div className="container" style= {{ backgroundColor:"#bbe9bb"}}>
-          <section id="services-highlights">
+        </div>
+        <div className="container">
+          <section id="services-highlights" style={{display:"flex", gap:"30px"}}>
             <button className={delivery==='Express'?classes.selectedButton:classes.button} onClick={() => updateDelivery('Express')}>
               <div className="service-card">
                 <h2>Express Shipping</h2>
@@ -151,20 +158,20 @@ const Homepage = () => {
         
           <div className="features">
             <div value="feature" className={classes.textLabel}>
-              <h3>Search for Shipping and Delivery Services</h3>
               <div className={classes.text}>
+                <h3>Search for Shipping and Delivery Services</h3>
                 <p style={{textAlign:"center", padding:"0px 50px 0px 50px",}}>Need to send a package across the country or even overseas? Our search feature allows you to explore a wide range of shipping and delivery services. From express couriers to international freight, you can find the perfect option for your needs.</p>
               </div>
             </div>
             <div value="feature" className={classes.textLabel}>
-              <h3>Find Reliable Service Providers</h3>
               <div className={classes.text}>
+                <h3>Find Reliable Service Providers</h3>
                 <p style={{textAlign:"center", padding:"0px 50px 0px 50px",}}>We understand that trust is paramount when it comes to shipping. That's why we've curated a list of dependable service providers, each vetted for their track record of reliability and customer satisfaction. Rest assured that your goods are in safe hands.</p>
               </div>  
             </div>
             <div className={classes.textLabel} value="feature">
-              <h3>Explore Coverage Areas</h3>
               <div className={classes.text}>
+                <h3>Explore Coverage Areas</h3>
                 <p>No matter where you are or where your package needs to go, our coverage area information will guide you. Easily locate service providers that operate in specific regions, whether it's in your city, across the country, or even globally.</p>
               </div>
             </div>
@@ -174,8 +181,8 @@ const Homepage = () => {
         <footer className="footer">
           <section id="about-us">
             <div className={classes.textLabel} value="AboutUs">
-              <h3>About Us</h3>
               <div className={classes.text}>
+                <h3>About Us</h3>
                 <p>Shipwise Solutions is a leading logistics and shipping hub that connects you with seamless shipping and delivery solutions around the world.</p>
                 <p>Our mission is to provide efficient and reliable logistics services that enable businesses and individuals to transport goods with ease, speed, and security. With a vast network of service providers and extensive coverage areas, we ensure your packages reach their destination on time, every time.</p>
                 <p>At Shipwise Solutions, we are committed to excellence, safety, and customer satisfaction. We leverage cutting-edge technology and a team of dedicated professionals to meet your shipping and delivery needs.</p>
@@ -191,7 +198,7 @@ const Homepage = () => {
               <li><a href="#blog">Blog</a></li>
             </ul>
           </div>
-          <div className="social-media">
+          <div className="social-media" style={{paddingBottom: "10px"}}>
             <h3>Follow Us</h3>
             <div style={{  listStyleType: "none", display:"flex", flexDirection:"row", gap:"15px",justifyContent:"center"}}>
               <a href="#facebook">Facebook</a>
@@ -199,11 +206,11 @@ const Homepage = () => {
               <a href="#linkedin">LinkedIn</a>
             </div>
           </div>
-          <div className="newsletter-signup">
+          {/* <div className="newsletter-signup">
             <h3>Subscribe to Our Newsletter</h3>
             <input type="email" placeholder="Your Email" className="newsletter-input" />
             <button className="newsletter-button">Subscribe</button>
-          </div>
+          </div> */}
 
           
         </footer>
