@@ -8,44 +8,48 @@ import { useNavigate } from 'react-router-dom';
 import HomePageNav from './HomePageNav';
 import Navbar from './Navbar';
 
-const LoginSignUp = () => {
+const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [login, setLogin] = useState(false);
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const [usertype,SetUsertype]=useState('');
+  const [signup,setSignup]=useState(false);
 
   const navigate = useNavigate();
+
+  const handleUsernameChange = (e) => { 
+    setUsername(e.target.value);
+    };
+
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleUsertype = (e) => {
+        SetUsertype(e.target.value);
+    };
 
   const handleButtonClick = () => {
     // Logic for login (e.g., authentic  
     // Simulate authentication (replace with your own logic)
-    if (username === 'user' && password === 'password') {
-      // Successful login, navigate to the homepage
+    if (username !=  '' && password != '' && usertype != '') {
       navigate('/orders');
-      setLogin(true);
-    } else if(username === 'shivdeep' && password === 'root'){
-        navigate('/orders');
-        setLogin(true);
+      alert('Signup Successful')
+      setSignup(true);
     }else {
       // Failed login, show an error message
-      alert('Invalid credentials');
+      alert(' Please fill all the details');
     }
   }
 
-  const handleButtonSignup = () => {
-    navigate('/signup');
+  const handleButtonLogin = () => {
+    navigate('/login');
   }
-  const[action,setAction]=useState("Login");
+
+  const[action,setAction]=useState("Signup");
   return (
     <>
       {
-        login ? 
+        signup ? 
         <Navbar/> 
         : 
         <HomePageNav/> 
@@ -57,22 +61,27 @@ const LoginSignUp = () => {
           <div className='inputs'>
               <div className="input">
                   <img class="logo-container" src={email_icon} alt=""/>
-                  <input type="email" placeholder='Email Id' value={username}
-            onChange={handleUsernameChange}/>
+                  <input type="email" placeholder='Email Id' value={username}  onChange={handleUsernameChange}/>
               </div>
           </div>
           <div className='inputs'>
               <div className="input">
                   <img class="logo-container" src={password_icon} alt=""/>
-                  <input type="password" placeholder='Password' value={password}
-            onChange={handlePasswordChange}/>
+                  <input type="password" placeholder='Password' value={password} onChange={handlePassword}/>
               </div>
           </div>
+          <div className='inputs'>
+              <div className="input">
+                  <img class="logo-container" src={password_icon} alt=""/>
+                  <input type="UserType" placeholder='usertype' value={usertype} onChange={handleUsertype}/>
+              </div>
+          </div>
+          
           {action==="Sign Up"?<div></div>:<div className="forgot-password">Forgot Password?<span>Click Here!</span></div>}
           
           <div className='submit-container'>
-          <div className={action === "Login" ? "submit gray" : "submit"} onClick={handleButtonSignup}>Sign Up</div>
-          <div className={action === "Sign Up" ? "submit gray" : "submit"} onClick={handleButtonClick}>Login</div>
+          <div className={action === "Signup" ? "submit gray" : "submit"} onClick={handleButtonClick}>Sign Up</div>
+          <div className={action === "Login" ? "submit gray" : "submit"} onClick={handleButtonLogin}>Login</div>
 
           </div>
       </div>
@@ -81,4 +90,4 @@ const LoginSignUp = () => {
 }
 
   
-export default LoginSignUp
+export default Signup

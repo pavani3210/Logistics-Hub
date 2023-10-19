@@ -32,6 +32,7 @@ import SenderAddresses from "./components/business/SenderAddresses";
 import Plan from "./components/account/Plan";
 import Orders from "./components/Orders";
 import Shipments from "./components/Shipments";
+import Signup from "./components/Signup";
 
 
 export default function App() {
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="billing" element={<Billing />} />
           <Route path = "reports" element={<ReportWebVitals />} />
           <Route path="login" element={<LoginSignUp />} />
+          <Route path="signup" element={<Signup />} />
           <Route path="homepage" element={<Homepage />} />
           <Route path="labels" element={<LabelAndPack />} />
           <Route path="packages" element={<Packages />} />

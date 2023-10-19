@@ -63,6 +63,7 @@ const HomePageNav = () => {
                 </nav>
                 <div style={{marginLeft:"300px",}}>
                     <Button className={classes.button}  style={{color:"black"}}href="/login">Login</Button>
+                    <Button className={classes.button}  style={{color:"black"}}href="/Signup">Signup</Button>
                 </div>
             </nav>
         </div>
