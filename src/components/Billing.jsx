@@ -7,7 +7,7 @@ import DiscoverCard from '../content/discover.png'
 import American from '../content/amer.png'
 
 import Box from '@mui/material/Box';
-import Navbar from '../Navbar';
+import Navbar from './Navbar';
 
 function Billing() {
     const [role, setRole] = React.useState('');

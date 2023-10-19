@@ -13,7 +13,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 
 import Box from '@mui/material/Box';
-import Navbar from '../Navbar';
+import Navbar from './Navbar';
 
 function Profile() {
     const [role, setRole] = React.useState('');

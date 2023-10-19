@@ -2,7 +2,7 @@
 import '../App.css';
 import { Divider} from "@mui/material";
 import Box from '@mui/material/Box';
-import Navbar from '../Navbar';
+import Navbar from './Navbar';
 
 function Shipping() {
     
