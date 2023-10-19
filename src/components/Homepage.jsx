@@ -89,7 +89,7 @@ const Homepage = () => {
             <p style={{textAlign:"end",padding:"10px 50px 20px 50px",}}>Are you in need of reliable shipping and delivery services? Look no further! Our platform is your gateway to a world of logistics solutions, connecting you with the most trusted service providers and providing vital information on coverage areas and more. Whether you're a business seeking efficient supply chain management or an individual looking to send a package, we've got you covered.</p>
           </div>
 
-        <div className="container">
+        <div className="container" style= {{ backgroundColor:"#bbe9bb"}}>
           <section id="services-highlights">
             <button className={delivery==='Express'?classes.selectedButton:classes.button} onClick={() => updateDelivery('Express')}>
               <div className="service-card">
@@ -134,15 +134,15 @@ const Homepage = () => {
           }
 
           <section id="service-providers">
-            <div className="service-providers">
+            {/* <div className="service-providers"> */}
               <h2>Serice Providers</h2>
               <div style={{display: "flex", flexDirection: "row", padding: "20px 20px 20px 20px", gap: "30px", }}>
-                <div><img src="usps.svg"/> </div>
-                <div><img src="ups.svg"/> </div>
+                <div><img src="usps_r.svg"/> </div>
+                <div><img src="ups_r.svg"/> </div>
                 <div><img src="fedex.svg"/> </div>
-                <div><img src="dhl.svg"/> </div>
+                <div><img src="dhl_r.svg"/> </div>
                 <div><img src="cdl.svg"/> </div>
-              </div>
+              {/* </div> */}
             </div>
           </section>
         </div>
