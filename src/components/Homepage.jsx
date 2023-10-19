@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import '../css/Homepage.css';
-import Navbar from './Navbar';
+import HomePageNav from './HomePageNav';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -67,7 +67,7 @@ const Homepage = () => {
   return (
     <div className="App">
       
-      <Navbar/>
+      <HomePageNav/>
       <main>
         <div className="slider-container">
           <Slider {...settings}>
@@ -90,8 +90,8 @@ const Homepage = () => {
           </div>
 
         <div className="container">
-          <section className="services-highlights">
-          <button className={delivery==='Express'?classes.selectedButton:classes.button} onClick={() => updateDelivery('Express')}>
+          <section id="services-highlights">
+            <button className={delivery==='Express'?classes.selectedButton:classes.button} onClick={() => updateDelivery('Express')}>
               <div className="service-card">
                 <h2>Express Shipping</h2>
                 <p>Fast and reliable delivery solutions.</p>
@@ -132,25 +132,22 @@ const Homepage = () => {
             </div>
             </section>
           }
-          {/* <section className="search-and-book">
-            <div className="featured-destinations">
-              <p>Featured Destinations: New York, London, Tokyo,...</p>
-            </div>
-          </section> */}
 
-          <div className="service-providers">
-            <h2>Serice Providers</h2>
-            <div style={{display: "flex", flexDirection: "row", padding: "20px 20px 20px 20px", gap: "30px", }}>
-              <div><img src="usps.svg"/> </div>
-              <div><img src="ups.svg"/> </div>
-              <div><img src="fedex.svg"/> </div>
-              <div><img src="dhl.svg"/> </div>
-              <div><img src="cdl.svg"/> </div>
+          <section id="service-providers">
+            <div className="service-providers">
+              <h2>Serice Providers</h2>
+              <div style={{display: "flex", flexDirection: "row", padding: "20px 20px 20px 20px", gap: "30px", }}>
+                <div><img src="usps.svg"/> </div>
+                <div><img src="ups.svg"/> </div>
+                <div><img src="fedex.svg"/> </div>
+                <div><img src="dhl.svg"/> </div>
+                <div><img src="cdl.svg"/> </div>
+              </div>
             </div>
-          </div>
+          </section>
         </div>
 
-        <section className="logistics-hub-content">
+        <section id="logistics-hub-content">
         
           <div className="features">
             <div value="feature" className={classes.textLabel}>
@@ -175,15 +172,17 @@ const Homepage = () => {
         </section>
 
         <footer className="footer">
-          <div className={classes.textLabel} value="AboutUs">
-            <h3>About Us</h3>
-            <div className={classes.text}>
-              <p>Shipwise Solutions is a leading logistics and shipping hub that connects you with seamless shipping and delivery solutions around the world.</p>
-              <p>Our mission is to provide efficient and reliable logistics services that enable businesses and individuals to transport goods with ease, speed, and security. With a vast network of service providers and extensive coverage areas, we ensure your packages reach their destination on time, every time.</p>
-              <p>At Shipwise Solutions, we are committed to excellence, safety, and customer satisfaction. We leverage cutting-edge technology and a team of dedicated professionals to meet your shipping and delivery needs.</p>
-              <p>Join us in the journey to simplify logistics, improve supply chains, and enable global trade. We look forward to serving you and being your trusted logistics partner.</p>
+          <section id="about-us">
+            <div className={classes.textLabel} value="AboutUs">
+              <h3>About Us</h3>
+              <div className={classes.text}>
+                <p>Shipwise Solutions is a leading logistics and shipping hub that connects you with seamless shipping and delivery solutions around the world.</p>
+                <p>Our mission is to provide efficient and reliable logistics services that enable businesses and individuals to transport goods with ease, speed, and security. With a vast network of service providers and extensive coverage areas, we ensure your packages reach their destination on time, every time.</p>
+                <p>At Shipwise Solutions, we are committed to excellence, safety, and customer satisfaction. We leverage cutting-edge technology and a team of dedicated professionals to meet your shipping and delivery needs.</p>
+                <p>Join us in the journey to simplify logistics, improve supply chains, and enable global trade. We look forward to serving you and being your trusted logistics partner.</p>
+              </div>
             </div>
-          </div>
+          </section>
           <div className="links">
             <h3>Quick Links</h3>
             <ul style={{  listStyleType: "none", display:"flex", flexDirection:"row", gap:"15px",justifyContent:"center"}}>

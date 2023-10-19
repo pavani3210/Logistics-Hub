@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FaceRoundedIcon from '@mui/icons-material/FaceRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -9,6 +9,7 @@ const useStyles = makeStyles({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        height:"50px"
     },
 
     logo: {
@@ -27,10 +28,12 @@ const useStyles = makeStyles({
         },
     },
     divhead:{
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-        backgroundColor: '#fff',
-        padding: '10px 20px',
-        borderBottom:"solid 1px #ccc"
+        // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+        // backgroundColor: '#fff',
+        padding:"10px",
+        background:"#bbe9bb"
+        // padding: '10px 20px',
+        // borderBottom:"solid 1px #ccc"
     },
     dropdown: {
         position: 'absolute',
@@ -53,7 +56,7 @@ const useStyles = makeStyles({
     },
 });
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const classes = useStyles();
 
@@ -61,23 +64,36 @@ const Navbar = () => {
         setShowDropdown(!showDropdown);
     };
 
+    useEffect(()=>{
+        console.log(props.tab)
+        setSelectedTab(props.tab)
+    },[])
+
+    const [selectedTab, setSelectedTab] = useState(props.tab)
+
     return (
         <div className={classes.divhead}>
             <nav className={classes.navbar}>
-                <div className={classes.logo}>
-                    <img src="logonew.avif" alt="Shipwise solutions" className="logo-image" />
+                <div style={{ display: 'flex', gap: '25px', justifyContent:"center", alignItems:"center"}}>
+                    <div className={classes.logo}>
+                        <img src="logonew.avif" alt="Shipwise solutions" className="logo-image" />
+                    </div>
+                    <Link className={selectedTab === "orders" ? 'nav-button-select' : 'nav-button-deselect'}
+                        onClick={()=>setSelectedTab("orders")}
+                        to={{
+                            pathname: "/orders",
+                            state: { tab: 'orders' } 
+                        }}
+                    >Orders</Link>
+                    <Link className={selectedTab === "shipments" ? 'nav-button-select' : 'nav-button-deselect'}  
+                        onClick={()=>setSelectedTab("shipments") }
+                        to={{
+                            pathname: "/shipments",
+                            state: { tab: 'shipments' } 
+                        }}
+                    >Shipments</Link>
                 </div>
-                <nav className="navigation">
-                    <ul>
-                        <li><a href="/homepage">Home</a></li>
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">Service Providers</a></li>
-                        <li><a href="/">Coverage</a></li>
-                        <li><a href="/">Pricing</a></li>
-                        <li><a href="/">Contact</a></li>
-                    </ul>
-                </nav>
-                <div style={{ display: 'flex', gap: '20px' }}>
+                <div style={{ display: 'flex', gap: '25px', paddingRight:"25px" }}>
                     <div className={classes.profile}>
                         <SettingsRoundedIcon />
                     </div>
@@ -85,20 +101,16 @@ const Navbar = () => {
                         <FaceRoundedIcon onClick={handleDropdown} />
                         {showDropdown && (
                             <div className={classes.dropdown}>
-                                <Link to="/profile">Profile</Link>
-                                <Link to="/billing">Billing</Link>
-                                <Link to="/plan">Plan</Link>
-                                <Link to="/shipping">Shipping</Link>
-                                <Link to="/logout">Logout</Link>
+                                <Link to="/profile" onClick={()=>setSelectedTab("")} >Profile</Link>
+                                <Link to="/billing" onClick={()=>setSelectedTab("")} >Billing</Link>
+                                <Link to="/plan" onClick={()=>setSelectedTab("")} >Plan</Link>
+                                <Link to="/shipping" onClick={()=>setSelectedTab("")} >Shipping</Link>
+                                <Link to="/logout" onClick={()=>setSelectedTab("")} >Logout</Link>
                             </div>
                         )}
                     </div>
                 </div>
             </nav>
-            <div className="search-bar" style={{width:"400px"}}>
-                <input type="text" placeholder="Search for services..." className="search-input" />
-                <button className="search-button">Search</button>
-            </div>
         </div>
     );
 };
