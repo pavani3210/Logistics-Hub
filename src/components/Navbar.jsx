@@ -73,7 +73,7 @@ const Navbar = (props) => {
         <div className={classes.divhead}>
             <nav className={classes.navbar}>
                 <div style={{ display: 'flex', gap: '25px', justifyContent:"center", alignItems:"center"}}>
-                    <div className={classes.logo} onClick={()=>navigate("/orders")}>
+                    <div className={classes.logo} onClick={()=>navigate("/")}>
                         <img src="logonew.png" alt="Shipwise solutions" className="logo-image" />
                     </div>
                     <Link className={selectedTab === "orders" ? 'nav-button-select' : 'nav-button-deselect'}
@@ -90,13 +90,13 @@ const Navbar = (props) => {
                             state: { tab: 'shipments' } 
                         }}
                     >Shipments</Link>
-                    <Link className={selectedTab === "products" ? 'nav-button-select' : 'nav-button-deselect'}  
+                    {/* <Link className={selectedTab === "products" ? 'nav-button-select' : 'nav-button-deselect'}  
                         onClick={()=>setSelectedTab("products") }
                         to={{
                             pathname: "/shipments",
                             state: { tab: 'products' } 
                         }}
-                    >Products</Link>
+                    >Products</Link> */}
                 </div>
                 <div style={{ display: 'flex', gap: '25px', paddingRight:"25px" }}>
                     <div style={{display:"flex", gap:"15px", fontSize:"15px"}}>
