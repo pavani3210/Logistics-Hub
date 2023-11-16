@@ -98,6 +98,14 @@ const Navbar = (props) => {
                         }}
                     >Products</Link>
                 </div>
+                <div style={{ display: 'flex', gap: '25px', justifyContent:"center", alignItems:"center"}}>
+                    <Link to="/profile" onClick={()=>setSelectedTab("")} >Profile</Link>
+                    <Link to="/billing" onClick={()=>setSelectedTab("")} >Billing</Link>
+                    <Link to="/plan" onClick={()=>setSelectedTab("")} >Plan</Link>
+                    <Link to="/shipping" onClick={()=>setSelectedTab("")} >Shipping</Link>
+                    <Link to="/logout" onClick={()=>setSelectedTab("")} >Logout</Link>
+                </div>
+
                 <div style={{ display: 'flex', gap: '25px', paddingRight:"25px" }}>
                     <div className={classes.profile}>
                         <SettingsRoundedIcon onClick={() => navigate('/labels')} />
