@@ -96,13 +96,13 @@ body, h1, h2, h3, p {
   }
   
   /* Container styles */
-  .container {
+  /* .container {
     background-color: #fff;
     padding: 0px;
     border-radius: 27px;
     margin-top: 50px;
     box-shadow: none;
-  }
+  } */
   
   /* Service card styles */
   .service-card {

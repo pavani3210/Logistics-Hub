@@ -90,6 +90,13 @@ const Navbar = (props) => {
                             state: { tab: 'shipments' } 
                         }}
                     >Shipments</Link>
+                    <Link className={selectedTab === "products" ? 'nav-button-select' : 'nav-button-deselect'}  
+                        onClick={()=>setSelectedTab("products") }
+                        to={{
+                            pathname: "/shipments",
+                            state: { tab: 'products' } 
+                        }}
+                    >Products</Link>
                 </div>
                 <div style={{ display: 'flex', gap: '25px', paddingRight:"25px" }}>
                     <div className={classes.profile}>
