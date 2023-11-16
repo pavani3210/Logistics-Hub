@@ -16,9 +16,9 @@ const Feature1 = () => {
             <div className='pretitle'>{pretitle}</div>
             <h2 className='title'>{title}</h2>
             <p className='lead'>{subtitle}</p>
-            <button className='btn-link flex items-center gap-x-3 hover:gap-x-5 transition-all'>
+            {/* <button className='btn-link flex items-center gap-x-3 hover:gap-x-5 transition-all'>
               {btnLink} <img src={btnIcon} alt='' />
-            </button>
+            </button> */}
           </div>
           {/* image */}
           <div className='flex-1' data-aos='fade-left' data-aos-offset='300' data-aos-delay='-100'>

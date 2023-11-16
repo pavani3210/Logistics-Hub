@@ -8,7 +8,7 @@ const Cards = () => {
   // index state
   const [index, setIndex] = useState(1);
   // destructure product data
-  const { cards } = product;
+  // const { cards } = product;
   return (
     <>
       {/* cards */}

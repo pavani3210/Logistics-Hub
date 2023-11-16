@@ -80,7 +80,7 @@ export const features = {
     title: 'Look no further',
     subtitle:
       "Our platform is your gateway to a world of logistics solutions, connecting you with the most trusted service providers and providing vital information on coverage areas and more. Whether you're a business seeking efficient supply chain management or an individual looking to send a package, we've got you covered.",
-    btnLink: 'Learn more',
+    // btnLink: 'Learn more',
     btnIcon: ArrowRightImg,
     image: Feature1Img,
   },
@@ -108,26 +108,26 @@ export const product = {
   title: 'Explore Coverage Areas.',
   subtitle:
     "No matter where you are or where your package needs to go, our coverage area information will guide you. Easily locate service providers that operate in specific regions, whether it's in your city, across the country, or even globally.",
-  cards: [
-    {
-      icon: CardIconImg1,
-      title: 'Indoor',
-      subtitle: 'of Ogun State',
-      delay: 200,
-    },
-    {
-      icon: CardIconImg2,
-      title: 'All Areas',
-      subtitle: 'of Ogun State',
-      delay: 400,
-    },
-    {
-      icon: CardIconImg3,
-      title: 'Outdoor',
-      subtitle: 'of Ogun State',
-      delay: 600,
-    },
-  ],
+  // cards: [
+  //   {
+  //     icon: CardIconImg1,
+  //     title: 'Indoor',
+  //     subtitle: 'of Ogun State',
+  //     delay: 200,
+  //   },
+  //   {
+  //     icon: CardIconImg2,
+  //     title: 'All Areas',
+  //     subtitle: 'of Ogun State',
+  //     delay: 400,
+  //   },
+  //   {
+  //     icon: CardIconImg3,
+  //     title: 'Outdoor',
+  //     subtitle: 'of Ogun State',
+  //     delay: 600,
+  //   },
+  // ],
 };
 
 export const pricing = {
@@ -180,17 +180,17 @@ export const testimonials = {
   clients: [
     {
       message:
-        'Treasure logistics has accomplished in a few days what we expected would take 1–2 weeks. They have outstanding skills and experience."',
+        'Logistics Hub provides good services. They have outstanding skills and experience."',
       image: AvatarImg1,
-      name: 'George',
+      name: 'Pavani',
       position: 'CEO',
       borderColor: '#FF7235',
     },
     {
       message:
-        'Your delivery is swift. Have been having issues with a rider, pick-up  and delivery of package will take 24/48hrs before the item get to the receiver. What I love about your delivery is time management. if I place a call for delivery and you tell me the said time, it won’t excide said time and few mins the package is delivered Thanks for making my business go smoothly, I appreciate it, God bless your business',
+        'Your delivery is swift. What I love about your delivery is time management. Thanks for making my business go smoothly, I appreciate it, God bless your business',
       image: AvatarImg2,
-      name: 'Tanny Moh',
+      name: 'John',
       position: 'CEO',
       borderColor: '#FFBE21',
     },
@@ -198,7 +198,7 @@ export const testimonials = {
       message:
         'Fast,reliable and dependable hard-working but easy to communicate with',
       image: AvatarImg3,
-      name: 'OOF Collection',
+      name: 'OOF',
       position: 'CEO',
       borderColor: '#4756DF',
     },
@@ -214,54 +214,54 @@ export const testimonials = {
 };
 
 export const cta = {
-  title: '20,000+ Delivered merchandise goods across Nigeria',
-  subtitle: 'Treasure logistics Company Limited',
+  title: '20,000+ Delivered merchandise goods across World',
+  subtitle: ' Logistics Hub Limited',
   btnText: '',
   img1: CtaImg1,
   img2: CtaImg2,
 };
 
 export const footer = {
-  logo: 'Treasure Logistics',
-  links: [
-    { name: 'Home', href: '/' },
-    { name: 'About us', href: '/' },
-    { name: 'Features', href: '/' },
+  // logo: 'Treasure Logistics',
+  // links: [
+  //   { name: 'Home', href: '/' },
+  //   { name: 'About us', href: '/' },
+  //   { name: 'Features', href: '/' },
 
-  ],
-  legal: [
-    { name: 'Our office Address:'},
-    { name: 'No 15 Oluwole street saraki Adigbe, Ogun state Abeokuta.', href: '/' },
-    { name: 'Telephone :'},
-    { name: '+234-905-127-4834 +234-7089862698', href: '/' },
-    { name: 'G-mail:'},
-    { name: 'stephanaduma60@gmail.com', href: '/' },
-  ],
-  newsletter: {
-    title: 'Newsletter',
-    subtitle: 'Over 25000 people have subscribed',
-  },
-  form: {
-    placeholder: 'Enter your email',
-    btnText: 'Subscribe',
-    smallText: 'We don’t sell your email and spam',
-  },
+  // ],
+  // legal: [
+  //   { name: 'Our office Address:'},
+  //   { name: 'No 15 Oluwole street saraki Adigbe, Ogun state Abeokuta.', href: '/' },
+  //   { name: 'Telephone :'},
+  //   { name: '+234-905-127-4834 +234-7089862698', href: '/' },
+  //   { name: 'G-mail:'},
+  //   { name: 'stephanaduma60@gmail.com', href: '/' },
+  // ],
+  // newsletter: {
+  //   title: 'Newsletter',
+  //   subtitle: 'Over 25000 people have subscribed',
+  // },
+  // form: {
+  //   placeholder: 'Enter your email',
+  //   btnText: 'Subscribe',
+  //   smallText: 'We don’t sell your email and spam',
+  // },
 };
 
 export const copyright = {
-  link1: {
-    name: 'Privacy & Terms',
-    href: '/',
-  },
-  link2: {
-    name: 'Contact us',
-    href: '/',
-  },
-  copyText: 'Copyright @ 2022 damel design',
+  // link1: {
+  //   name: 'Privacy & Terms',
+  //   href: '/',
+  // },
+  // link2: {
+  //   name: 'Contact us',
+  //   href: '/',
+  // },
+  // copyText: 'Copyright @ 2022 damel design',
   
-  social: [
-    { icon: WhatsappIcon, href: 'https://wa.me/+2349051274834' },
-    { icon: GmailIcon, href: 'mailto:stephenduma60@gmail.com' },
-    { icon: PhoneIcon, href: 'tel:+2347089862698' },
-  ],
+  // social: [
+  //   { icon: WhatsappIcon, href: 'https://wa.me/+2349051274834' },
+  //   { icon: GmailIcon, href: 'mailto:stephenduma60@gmail.com' },
+  //   { icon: PhoneIcon, href: 'tel:+2347089862698' },
+  // ],
 };

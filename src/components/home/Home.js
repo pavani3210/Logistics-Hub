@@ -14,7 +14,7 @@ import Feature3 from './Feature3';
 import Product from './Product';
 import Testimonials from './Testimonials';
 import Cta from './Cta';
-import Footer from './Footer';
+// import Footer from './Footer';
 import From from './Form';
 import './home.css'
 
@@ -35,7 +35,7 @@ const Home = () => {
       <From />
       <Testimonials />
       <Cta />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

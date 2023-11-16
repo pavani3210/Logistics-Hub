@@ -58,10 +58,10 @@ const HomePageNav = (props) => {
                         <li><button className={classes.button} onClick={() => scrollToSection('about-us')}>About us</button></li> */}
                     </ul>
                 </nav>
-                <div>
+                {/* <div>
                     <Button className={classes.button}  style={{color:"black"}}href="/login">Login</Button>
                     <Button className={classes.button}  style={{color:"black"}}href="/Signup">Signup</Button>
-                </div>
+                </div> */}
             </nav>
         </div>
     );

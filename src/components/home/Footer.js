@@ -1,8 +1,8 @@
 import React from 'react';
 // import data
-import { footer } from './data';
+// import { footer } from './data';
 // import components
-import Copyright from './Copyright';
+// import Copyright from './Copyright';
 
 const Footer = () => {
   // destructure footer data
@@ -86,7 +86,7 @@ const Footer = () => {
           data-aos-offset='100'
           data-aos-delay='200'
         />
-        <Copyright />
+        {/* <Copyright /> */}
       </div>
     </footer>
   );
