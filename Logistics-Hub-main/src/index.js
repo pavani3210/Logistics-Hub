@@ -34,6 +34,7 @@ import Orders from "./components/Orders";
 import Shipments from "./components/Shipments";
 import Signup from "./components/Signup";
 import Review from "./components/Review";
+import Chatgpt from "./components/Chatgpt";
 
 
 export default function App() {
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="orders" element={<Orders />} />
           <Route path="reviews" element={<Review />} />
           <Route path="shipments" element={<Shipments />} />
+          <Route path="chatgpt" element={<Chatgpt />} />
           <Route path="plan" element={<Plan />} />
         </Routes>
       </BrowserRouter>

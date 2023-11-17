@@ -38,6 +38,7 @@ export const nav = [
   { name: 'Features', href: '#cta' },
   { name: 'Location', href: '#product'},
   { name: 'Reviews', href: '#testimonial' },
+  {name: 'Support', href:'chatgpt'}
 ];
 
 export const hero = {
