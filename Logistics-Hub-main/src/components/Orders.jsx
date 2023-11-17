@@ -31,7 +31,6 @@ function Orders() {
                 console.log('Response data:', response.data);
                 setSampleData(response.data.data);
                 if (response.data.message === 'Data retrieved successfully') {
-                  
                 } else {
                   //setError('Error fetching data: ' + response.data.error);
                 }
@@ -39,7 +38,7 @@ function Orders() {
               .catch((err) => {
                 //setError('Error fetching data: ' + err.message);
               });
-          }, []);
+          }, [sampleData]);
         const [searchTerm, setSearchTerm] = React.useState("");
         const [currentOrder, setCurrentOrder] = React.useState(null);
         const [showMapPopup, setShowMapPopup] = React.useState(false);
@@ -59,20 +58,20 @@ function Orders() {
             carrierName === "Fedex" ? "fedex.svg" :
             carrierName === "DHL" ? "dhl.svg" :
             "cdl.svg";
-            axios.post('http://localhost:8081/order', {customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo})
+            axios.post('http://localhost:8081/order', {customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo, price})
             .then(res => {
               console.log('Response status:', res.status);
               console.log('Response data:', res.data);
-          
+                
         
               if (res.data === 'Error') {
                 console.error('Login failed. Server returned an error:', res.data);
                 
               } else {
                 // Process the successful response data
-                console.log('Order successful!');
-                
-                 setShowPopup(false); 
+                setSampleData([...sampleData,[customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo, price]] );
+                alert('Order placed successfully!');
+                setShowPopup(false); 
               }
             })
 
@@ -91,6 +90,14 @@ function Orders() {
         const handleMapPopupClose = () => {
             setCurrentOrder(null);
             setShowMapPopup(false);
+        };
+
+        const trackButton = () => {
+            return (
+                <Button onClick={() => handleTrackButtonClick(orderId, customer, itemName, itemWeight, packageDimensions, carrierName)}>
+                    Track
+                </Button>
+            );
         };
 
         const filteredData = sampleData.filter((data) => {
@@ -144,7 +151,7 @@ function Orders() {
                                                 </TableCell>
                                                 <TableCell style={{border: "1px solid black"}}>{data.price}</TableCell>
                                                 <TableCell style={{border: "1px solid black"}}>{data.destination}</TableCell>
-                                                <TableCell style={{border: "1px solid black"}}>{data.trackButton}</TableCell>
+                                                <TableCell style={{border: "1px solid black"}}>{trackButton()}</TableCell>
                                             </TableRow>
                                         ))}
                                     </TableBody>

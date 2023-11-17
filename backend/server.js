@@ -5,14 +5,17 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "Parshwa@3103",
+    // password: "root",
     database: "Logistic"
 })
 
 app.post('/user', (req, res) => {
+    console.log("username: "+req.body.username+"Password: "+req.body.password+"usertype: "+req.body.usertype);
     const sql = "SELECT * from user WHERE username=? AND password=? AND usertype=?";
 
     db.query(sql, [req.body.username,req.body.password,req.body.usertype], (err, data) => {
@@ -49,11 +52,11 @@ app.post('/register', (req, res) => {
 
 
 app.post('/order', (req, res) => {
-    const { customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo } = req.body;
+    const { customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo,price} = req.body;
 
-    const sql = "INSERT INTO orders (customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO orders (customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo,price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    db.query(sql, [customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo], (err, result) => {
+    db.query(sql, [customer, itemName, itemWeight, packageDimensions, carrierName,dateOrdered,destination,logo,price], (err, result) => {
         if (err) {
             console.error(err);
             return res.status(500).json({ error: "Internal Server Error", message: err.message });

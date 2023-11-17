@@ -11,7 +11,7 @@ import axios from 'axios';
 const LoginSignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [usertype, SetUsertype] = useState('');
+  const [usertype, SetUsertype] = useState('customer');
   const [login, setLogin] = useState(false);
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);

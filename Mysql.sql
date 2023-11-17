@@ -36,6 +36,9 @@ select * from orders;
 ALTER TABLE Orders
 ADD COLUMN logo VARCHAR(255);
 
+ALTER TABLE orders
+ADD COLUMN price int;
+
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'Parshwa@3103';
 
