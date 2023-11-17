@@ -8,10 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import HomePageNav from './HomePageNav';
 import Navbar from './Navbar';
 
-const LoginSignUp = () => {
+const LoginSignUp = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [login, setLogin] = useState(false);
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -23,17 +22,17 @@ const LoginSignUp = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    // Logic for login (e.g., authentic  
+    // Logic for props.login (e.g., authentic  
     // Simulate authentication (replace with your own logic)
     if (username === 'user' && password === 'password') {
-      // Successful login, navigate to the homepage
+      // Successful props.login, navigate to the homepage
       navigate('/orders');
-      setLogin(true);
+      props.setLogin(true);
     } else if(username === 'shivdeep' && password === 'root'){
         navigate('/orders');
-        setLogin(true);
+        props.setLogin(true);
     }else {
-      // Failed login, show an error message
+      // Failed props.login, show an error message
       alert('Invalid credentials');
     }
   }
@@ -45,7 +44,7 @@ const LoginSignUp = () => {
   return (
     <>
       {
-        login ? 
+        props.login ? 
         <Navbar/> 
         : 
         <HomePageNav/> 
