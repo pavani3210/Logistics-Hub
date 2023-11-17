@@ -35,18 +35,28 @@ import Shipments from "./components/Shipments";
 import Signup from "./components/Signup";
 import Review from "./components/Review";
 import Chatgpt from "./components/Chatgpt";
+import { useState } from "react";
 
 
 export default function App() {
+  const [login, setLogin] = useState(false);
   return (
     <>
       <BrowserRouter>
+      {!login && 
+      <Routes>
+        <Route path="" element={<Homepage />} />
+        <Route path="login" element={<LoginSignUp login={login} setLogin={setLogin} />} />
+        <Route path="*" element={<LoginSignUp login={login} setLogin={setLogin}/>} />
+      </Routes>
+      }
+      {login &&
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage login={login} setLogin={setLogin}/>} />
           <Route path="profile" element={<Profile />} />
           <Route path="billing" element={<Billing />} />
           <Route path = "reports" element={<ReportWebVitals />} />
-          <Route path="login" element={<LoginSignUp />} />
+          <Route path="login" element={<LoginSignUp login={login} setLogin={setLogin}/>} />
           <Route path="signup" element={<Signup />} />
           <Route path="homepage" element={<Homepage />} />
           <Route path="labels" element={<LabelAndPack />} />
@@ -63,6 +73,7 @@ export default function App() {
           <Route path="chatgpt" element={<Chatgpt />} />
           <Route path="plan" element={<Plan />} />
         </Routes>
+      }
       </BrowserRouter>
     </>
   );

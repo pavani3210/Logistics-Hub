@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import axios from 'axios';
 
-const LoginSignUp = () => {
+const LoginSignUp = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [usertype, SetUsertype] = useState('customer');
@@ -39,8 +39,9 @@ const LoginSignUp = () => {
         
       } else {
         // Process the successful response data
+        
+        props.setLogin(true);
         console.log('Login successful!');
-       
         navigate('/orders');
       }
     })

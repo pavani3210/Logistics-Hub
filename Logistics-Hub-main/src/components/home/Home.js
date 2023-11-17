@@ -18,7 +18,7 @@ import Cta from './Cta';
 import From from './Form';
 import './home.css'
 
-const Home = () => {
+const Home = (props) => {
   // initialize aos
   Aos.init({
     duration: 1800,
@@ -26,7 +26,7 @@ const Home = () => {
   });
   return (
     <div className='overflow-hidden' style={{background:"#fff", width:"100vw", display:"block"}}>
-      <Header style={{background:"#fff", width:"100%"}}/>
+      <Header style={{background:"#fff", width:"100%"}} login={props.login} setLogin={props.setLogin}/>
       <Hero />
       <Feature1 />
       <Feature2 />
