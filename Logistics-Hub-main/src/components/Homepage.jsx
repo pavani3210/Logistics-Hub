@@ -49,7 +49,7 @@ const useStyles = makeStyles({
   },
 });
 
-const Homepage = (props) => {
+const Homepage = () => {
   const [delivery,setdelivery]  = useState('');
   const classes = useStyles();
   const settings = {
@@ -68,8 +68,8 @@ const Homepage = (props) => {
   
   return (
     <div className="App">
-      <HomePageNav isHome={true} login={props.login} setLogin={props.setLogin}/>
-        <Home login={props.login} setLogin={props.setLogin}/>
+      <HomePageNav isHome={true}/>
+        <Home/>
     </div>
   );
 };

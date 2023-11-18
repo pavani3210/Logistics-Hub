@@ -5,7 +5,7 @@ import { HiMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import MobileNav from './MobileNav';
 import Nav from './Nav';
 
-const Header = (props) => {
+const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const { logo, btnText } = header;
@@ -38,14 +38,9 @@ const Header = (props) => {
             className='btn btn-sm btn-outline hidden lg:flex'
             data-aos='fade-down'
             data-aos-delay='1400'
-            onClick={() => {
-              if (props.login) {
-                props.setLogin(false)
-                navigate('/')
-              } else {
-              navigate('/login')}}} 
+            onClick={() => navigate('/login')} 
           >
-            {props.login ? "Logout": "Login to Dashboard"}
+            {btnText}
           </button>
         </a>
         <button className='lg:hidden' onClick={() => setMobileNav(!mobileNav)}>

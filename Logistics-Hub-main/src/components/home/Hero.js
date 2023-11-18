@@ -1,13 +1,11 @@
 import React from 'react';
 // import data
 import { hero } from './data';
-import { useNavigate } from 'react-router-dom';
 // import icons
 import { HiOutlineChevronDown } from 'react-icons/hi';
 
 const Hero = () => {
   // destructure hero data
-  const navigate = useNavigate();
   const { title, subtitle, btnText, image } = hero;
   return (
     <section className='min-h-[900px] py-12'>
@@ -36,7 +34,7 @@ const Hero = () => {
               data-aos-delay='700'
             >
                <a href='#formlink'>
-              <button className='btn btn-md lg:btn-lg btn-accent flex justify-center items-center lg:gap-x-4' onclick= {navigate('/login')}>
+              <button className='btn btn-md lg:btn-lg btn-accent flex justify-center items-center lg:gap-x-4'>
                 {btnText}
                 <HiOutlineChevronDown />
               </button>

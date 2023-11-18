@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import axios from 'axios';
 
-const LoginSignUp = (props) => {
+const LoginSignUp = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [usertype, SetUsertype] = useState('customer');
+  const [usertype, SetUsertype] = useState('');
   const [login, setLogin] = useState(false);
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -39,10 +39,9 @@ const LoginSignUp = (props) => {
         
       } else {
         // Process the successful response data
-        
-        props.setLogin(true);
         console.log('Login successful!');
-        navigate('/orders');
+       
+        navigate('/Shipments');
       }
     })
   }
@@ -84,7 +83,7 @@ const LoginSignUp = (props) => {
             value={usertype}
             onChange={handleTypeChange}
           >
-          <option className="opt" >Select User</option>
+            <option className="opt" value="cust">Select usertype</option>
             <option className="opt" value="customer">Customer</option>
             <option className="opt" value="admin">Admin</option>
           </select>
