@@ -116,7 +116,7 @@ function Orders() {
                             {sampleData.length === 0 ? "No Orders yet. But you'll get one. Welcome. 🙏🏻" : "Welcome. 🙏🏻"}
                         </h4>
                         <Button onClick={handleCreateLabelClick}>
-                            Manually create a label
+                            Create a New Shipment Here
                         </Button>
                         <TextField label="Search" value={searchTerm} onChange={handleSearchTermChange} style={{marginBottom: "16px"}} />
                         {filteredData.length > 0 && (
