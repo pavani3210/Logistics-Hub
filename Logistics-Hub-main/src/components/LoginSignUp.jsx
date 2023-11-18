@@ -84,6 +84,7 @@ const LoginSignUp = (props) => {
             value={usertype}
             onChange={handleTypeChange}
           >
+          <option className="opt" value="customer">Select User</option>
             <option className="opt" value="customer">Customer</option>
             <option className="opt" value="admin">Admin</option>
           </select>
